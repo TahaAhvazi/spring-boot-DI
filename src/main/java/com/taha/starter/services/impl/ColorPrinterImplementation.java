@@ -4,7 +4,9 @@ import com.taha.starter.services.BluePrinter;
 import com.taha.starter.services.ColorPrinter;
 import com.taha.starter.services.GreenPrinter;
 import com.taha.starter.services.RedPrinter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ColorPrinterImplementation implements ColorPrinter {
     //These are our three dependencies
     private RedPrinter redPrinter;
@@ -19,6 +21,6 @@ public class ColorPrinterImplementation implements ColorPrinter {
 
     @Override
     public String print() {
-        return String.join(", ",redPrinter.print(),bluePrinter.print(), redPrinter.print());
+        return String.join(", ",redPrinter.print(),bluePrinter.print(), greenPrinter.print());
     }
 }
